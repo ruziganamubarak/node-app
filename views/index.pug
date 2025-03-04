@@ -1,0 +1,11 @@
+extends layout
+block content
+   h1 Latest Blog Posts
+   each post in posts
+      .post
+         if post.image
+            img(src=post.image, alt=post.title)
+         h2: a(href="/post/" + post.id) #{post.title}
+         p #{post.content.substring(0, 200)}...
+         small #{post.createdAt}
+         a(href="/post/" + post.id) Read More

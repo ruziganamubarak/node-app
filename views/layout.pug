@@ -1,0 +1,17 @@
+doctype html
+html
+   head
+      title Blog App
+      link(rel="stylesheet" href="/styles.css")
+   body
+      .container
+         h1 My Blog App
+         nav
+            a(href="/") Home |
+            a(href="/create") Create Post |
+            if user
+               a(href="/logout") Logout
+            else
+               a(href="/login") Login |
+               a(href="/register") Register
+         block content
